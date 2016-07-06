@@ -1,5 +1,5 @@
-chislo = input("Введите число:")
-stepen = input("Введите степь,в которую надо возвести это число:")
-otvet = int(chislo)**int(stepen)
-print(chislo, "в степени",stepen,"=",otvet)
+number = input("Enter the number:")
+factor = input("Enter the factor:")
+result = int(number)**int(factor)
+print("{0} ^ {1} = {2}".format(number,factor,result))
 
