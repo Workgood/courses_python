@@ -1,8 +1,8 @@
 #bmi_calculator
 print("***BMI CALCULATOR***")
-height = input("Enter your height(cm)")
-weight = input("Enter your weight(kg)")
-BMI = int(weight)/int(height)/int(height)*10000
+height =int(input("Enter your height(cm)"))
+weight =int(input("Enter your weight(kg)"))
+BMI = (weight*10000)/(height**2)
 print("Your BMI is ",BMI)
 if(BMI<15):
 	print("Acute underweight!")
