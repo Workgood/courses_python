@@ -1,7 +1,6 @@
 filename = input("Enter a filename: ")
 with open(filename) as f:
     words = f.read().split()
-f.close()
 d_words = {}
 for word in words:
     try:
