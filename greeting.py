@@ -1,19 +1,37 @@
+def eng():
+    return "Hello world!"
+
+def bel():
+    return "Прывітанне свет!"
+
+def rus():
+    return "Привет мир!"
+
+def ua():
+    return "Привіт світ!"
+
+def de():
+    return "Hallo Welt!"
+
+def fra():
+    return "Bonjour tout le monde !"
+
+
 def greet_lang(lang):
     if lang == "en":
-       greet = "Hello world!"#variable which contains language of the greeting
+       return eng()
     elif lang == "be":
-        greet ="Прывітанне свет!"
+        return bel()
     elif lang == "ru":
-        greet ="Привет мир!"
+        return rus()
     elif lang == "de":
-        greet ="Hallo Welt!"
+        return de()
     elif lang == "ua":
-        greet ="Привіт світ!"
+        return ua()
     elif lang == "fr":
-        greet ="Bonjour tout le monde !"
+        return fra()
     else: 
-        greet = "Undefined language!"
-    return greet
+        return "Undefined language!" 
 
 
 usr_input = input("Enter a language of greeting(en, be, ru, de, ua, fr):")
