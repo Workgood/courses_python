@@ -1,35 +1,18 @@
-def eng():
-    return "Hello world!"
-
-def bel():
-    return "Прывітанне свет!"
-
-def rus():
-    return "Привет мир!"
-
-def ua():
-    return "Привіт світ!"
-
-def de():
-    return "Hallo Welt!"
-
-def fra():
-    return "Bonjour tout le monde !"
-
+langs = {'en':"Hello world!",'be':"Прывітанне свет!",'ru':"Привет мир!",'de':"Hallo Welt!",'fr':"Bonjour tout le monde!",'ua':"Привіт Світ"}
 
 def greet_lang(lang):
     if lang == "en":
-       return eng()
+       return langs['en']
     elif lang == "be":
-        return bel()
+        return langs['be']
     elif lang == "ru":
-        return rus()
+        return langs['ru']
     elif lang == "de":
-        return de()
+        return langs['de']
     elif lang == "ua":
-        return ua()
+        return langs['ua']
     elif lang == "fr":
-        return fra()
+        return langs['fr']
     else: 
         return "Undefined language!" 
 
