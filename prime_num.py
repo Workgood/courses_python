@@ -1,7 +1,7 @@
 import math
 
 def is_prime(num):
-    for i in range(2, int(math.sqrt(num)) + 1):
+    for i in range(2, math.ceil((math.sqrt(num))+1)):
         if num % i == 0:
             return False
     return True

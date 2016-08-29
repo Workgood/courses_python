@@ -1,18 +1,8 @@
 langs = {'en':"Hello world!",'be':"Прывітанне свет!",'ru':"Привет мир!",'de':"Hallo Welt!",'fr':"Bonjour tout le monde!",'ua':"Привіт Світ"}
 
 def greet_lang(lang):
-    if lang == "en":
-       return langs['en']
-    elif lang == "be":
-        return langs['be']
-    elif lang == "ru":
-        return langs['ru']
-    elif lang == "de":
-        return langs['de']
-    elif lang == "ua":
-        return langs['ua']
-    elif lang == "fr":
-        return langs['fr']
+    if lang in langs:
+       return langs[lang]
     else: 
         return "Undefined language!" 
 
