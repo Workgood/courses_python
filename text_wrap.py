@@ -11,9 +11,10 @@ def wrap(text, maxlen):
             c = len(word)
         ntext += " "
         c += 1
-        ntext += word
-    ntext.split()
-    return ntext
+        ntext += word 
+    for line in ntext.split("\n"):
+        print(line.strip())
+    return ""
     
 
 
