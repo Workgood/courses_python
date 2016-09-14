@@ -1,46 +1,33 @@
+import sys
+
+def logAndExit(msg, err_code):
+    print(msg)
+    sys.exit(err_code)
+
 def wrap(text, maxlen):
-    words = []
-    ntext = ""
-    c = 0
-    for i in text.split():
-        words.append(i)
-    for word in words:
-        c += len(word)
-        if c >= maxlen:
-            ntext += '\n'
-            c = len(word)
-        ntext += " "
-        c += 1
-        ntext += word 
-    for line in ntext.split("\n"):
-        print(line.strip())
-    return ""
-    
+    result = ''
+    len_string = 0
+    for word in text.strip().split():
+        len_word = len(word)
+        # if line is too long, go to the next
+        if len_string + len_word >= maxlen:
+            result += '\n'
+            len_string = 0
+        # else and is not at the beginning, add a space
+        elif len_string != 0:
+            result += ' '
+        result += word
+        len_string += len_word + 1
+    return result
+
+filename = input("Enter filename: ").strip()
 maxlen = int(input("Enter a max length of the line: "))
+if (maxlen < 0):
+    logAndExit("The length of the line is too short: {}".format(maxlen), 1)
 
-
-with open("text.txt") as f:
-    print(wrap(f.read(),maxlen))
-
-
-'''
-def spl(text, maxlen):
-    ntext = ''
-    c = 0
-    for i in text.split():
-        c += len(i)
-        if c >= maxlen:
-            ntext += '\n'
-            c = len(i)
-        elif ntext != '':
-            ntext += ' '
-            c += 1
-        ntext += i
-    return ntext
-
-'''
-
-
-
-
+try:
+    with open(filename) as f:
+        print(wrap(f.read(), maxlen))
+except FileNotFoundError:
+    logAndExit("The length of the line is too short: {}".format(maxlen), 1)
 
