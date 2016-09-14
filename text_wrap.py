@@ -16,10 +16,11 @@ def wrap(text, maxlen):
         print(line.strip())
     return ""
     
+maxlen = int(input("Enter a max length of the line: "))
 
 
 with open("text.txt") as f:
-    print(wrap(f.read(),30))
+    print(wrap(f.read(),maxlen))
 
 
 '''
@@ -37,10 +38,9 @@ def spl(text, maxlen):
         ntext += i
     return ntext
 
-
-filename = input("Enter a filename: ")
-maxlen = int(input("Enter a max length of the line: "))
-with open(filename) as f:
-    print(spl(f.read(), maxlen))
-
 '''
+
+
+
+
+
