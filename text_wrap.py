@@ -1,4 +1,5 @@
 import sys
+import argparse
 
 def logAndExit(msg, err_code):
     print(msg)
@@ -20,14 +21,19 @@ def wrap(text, maxlen):
         len_string += len_word + 1
     return result
 
-filename = input("Enter filename: ").strip()
-maxlen = int(input("Enter a max length of the line: "))
-if (maxlen < 0):
-    logAndExit("The length of the line is too short: {}".format(maxlen), 1)
+#filename = input("Enter filename: ").strip()
+parser = argparse.ArgumentParser('Enter Max length of the line and filename:')
+parser.add_argument('maxlen', type = int, help = 'Max length of the line')
+parser.add_argument('filename', type = str, help = 'Filename')
+maxlen = parser.parse_args()
+filename = parser.parse_args()
+
+if (maxlen.maxlen < 0):
+    logAndExit("The length of the line is too short: {}".format(maxlen.maxlen), 1)
 
 try:
-    with open(filename) as f:
-        print(wrap(f.read(), maxlen))
+    with open(filename.filename) as f:
+        print(wrap(f.read(), maxlen.maxlen))
 except FileNotFoundError:
-    logAndExit("The length of the line is too short: {}".format(maxlen), 1)
+    logAndExit("Can't find file: {}".format(filename.filename), 1)
 
