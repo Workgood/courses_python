@@ -1,21 +1,22 @@
+#!/usr/bin/env python3
 '''
-def fact(num):
-    if num == 0:
-        return 1
-    cur_fact = 1
-    for i in range(1, num + 1):
-        cur_fact = cur_fact * i
-    return cur_fact
+Function wich summarizes elems from 1 to num
+
+Args:
+num (int): number of operations.
+
+Returns:
+result (float): sum of all elems.
 '''
 
-def sum(N):
+def SumElems(num):
     cur_fact = 1
     result = 1
-    for i in range(1, N + 1):
+    for i in range(1, num + 1):
         cur_fact *= i
         result += 1/cur_fact
     return result
 
 
-usr_input = int(input("Enter N: "))
-print(sum(usr_input))
+usr_input = int(input("Enter a number of operations: "))
+print(SumElems(usr_input))

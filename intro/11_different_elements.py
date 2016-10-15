@@ -1,18 +1,29 @@
-def AddandSort(from_list,to_list):#takes elements from first list and and adds to other
-    for i in from_list:
-       to_list.append(i)
-    to_list.sort()
-    return to_list
+"""
+Converts set to list(takes elems from set and put them to list):
 
-nums = []
-num = input("Enter some nums: ").strip()
-AddandSort(num, nums)
+Args:
+set : set we should convert.
+result (list): list wich made from set.
 
-cur_seq = " ".join(nums)
-print("Before manipulations: ",cur_seq)
-new_nums = set(nums)
-nums.clear()
-AddandSort(new_nums,nums)
+Returns:
+StrsToInts(result): function wich converts strings to integers
+                    from our list(result) and returns sorted list.
+"""
+def SetToList(set):
+    
+    def StrsToInts(strs):
+        ints = []
+        for i in strs:
+            ints.append(int(i))
+        ints = sorted(ints)
+        return ints
+   
+    result = []
+    for i in set:
+        result.append(i)
+    return StrsToInts(result)
 
-result = " ".join(nums)
-print("After: ",result)
+
+usr_nums = set(input("Enter some: ").split())
+print(SetToList(usr_nums))
+
