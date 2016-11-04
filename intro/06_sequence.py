@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 '''
-Function wich summarizes elems from 1 to num
+Summarizes elems from 1 to num
 
 Args:
-num (int): number of operations.
+num (int): elems to sum.
 
 Returns:
 result (float): sum of all elems.
 '''
 
-def SumElems(num):
+def sumElems(num):
     cur_fact = 1
     result = 1
     for i in range(1, num + 1):
@@ -18,5 +18,5 @@ def SumElems(num):
     return result
 
 
-usr_input = int(input("Enter a number of operations: "))
-print(SumElems(usr_input))
+usr_input = int(input("Enter a number of elements to sum: "))
+print(sumElems(usr_input))

@@ -2,16 +2,15 @@
 Converts set to list(takes elems from set and put them to list):
 
 Args:
-set : set we should convert.
+array : set we should convert.
 result (list): list wich made from set.
 
 Returns:
-StrsToInts(result): function wich converts strings to integers
-                    from our list(result) and returns sorted list.
+ints(return value of strsToInts).
 """
-def SetToList(set):
+def setToList(array):
     
-    def StrsToInts(strs):
+    def strsToInts(strs):
         ints = []
         for i in strs:
             ints.append(int(i))
@@ -19,11 +18,11 @@ def SetToList(set):
         return ints
    
     result = []
-    for i in set:
+    for i in array:
         result.append(i)
-    return StrsToInts(result)
+    return strsToInts(result)
 
 
 usr_nums = set(input("Enter some: ").split())
-print(SetToList(usr_nums))
+print(setToList(usr_nums))
 
