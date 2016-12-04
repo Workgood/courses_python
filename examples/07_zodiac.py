@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from datetime import datetime, date
 
 zodiacs = {
@@ -9,18 +11,22 @@ zodiacs = {
     datetime.strptime("22.6", "%d.%m"): "Cancer",
     datetime.strptime("23.8", "%d.%m"): "Leo",
     datetime.strptime("23.9", "%d.%m"): "Virgo",
-    datetime.strptime("23.10", "%d.%m"): "Libra",
+    datetime.strptime("23.10", "%d.%m"): "Libra", #doesn't find this month
     datetime.strptime("23.11", "%d.%m"): "Scorpio",
     datetime.strptime("22.12", "%d.%m"): "Sagittarius"
 }
 
 
 def get_zodiac(zodiacs, date):
-    zodiac_dates = sorted(list(zodiacs.keys()))
+    zodiac_dates = sorted(list(zodiacs.keys()))   
+    for i in zodiac_dates:
+        if i == date:
+            return zodiacs.get(i)
+                
 
 
 try:
-    input_date = datetime.strptime(input("Enter date (): "), "%d.%m")
-    get_zodiac(zodiacs, input_date)
+    input_date = datetime.strptime(str(input("Enter date (): ")), "%d.%m")
+    print(get_zodiac(zodiacs, input_date))
 except ValueError:
     print("Invalid date!")
