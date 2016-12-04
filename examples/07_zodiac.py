@@ -19,9 +19,9 @@ zodiacs = {
 
 def get_zodiac(zodiacs, date):
     zodiac_dates = sorted(list(zodiacs.keys()))   
-    for i in zodiac_dates:
-        if i == date:
-            return zodiacs.get(i)
+    for i,g in enumerate(zodiac_dates): # g is next elem after i
+        if (date >= zodiac_dates[i] and date < zodiac_dates[i+1]): 
+            return zodiacs.get(g)
                 
 
 
